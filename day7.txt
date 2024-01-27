@@ -1,0 +1,12 @@
+NOT gw -> gx
+NOT iz -> ja
+1 AND io -> ip
+NOT ag -> ah
+b RSHIFT 5 -> f
+NOT cr -> cs
+kb AND kd -> ke
+jr AND js -> ju
+cq AND cs -> ct
+il AND in -> io
+NOT ju -> jv
+du OR dt -> dv
