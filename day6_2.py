@@ -9,27 +9,25 @@ with open("day6.txt") as file:
 			end = chunks[4].split(",")
 			for i in range(int(start[0])-1,int(end[0])):
 				for j in range(int(start[1])-1,int(end[1])):
-					lights[i][j] = 1
+					lights[i][j] += 1
 
 		elif chunks[0] + chunks[1] == "turnoff" :
 			start = chunks[2].split(",")
 			end = chunks[4].split(",")
 			for i in range(int(start[0])-1,int(end[0])):
 				for j in range(int(start[1])-1,int(end[1])):
-					lights[i][j] = 0
+					if lights[i][j] >=1: 
+						lights[i][j] -= 1
 
 		elif chunks[0] == "toggle" :
 			start = chunks[1].split(",")
 			end = chunks[3].split(",")
 			for i in range(int(start[0])-1,int(end[0])):
 				for j in range(int(start[1])-1,int(end[1])):
-					if lights[i][j] == 0:
-						lights[i][j] = 1
-					else:
-						lights[i][j] = 0
+						lights[i][j] = lights[i][j] + 2
+					
 count = 0
-for i in lights:
-	for j in i:
-		if j == 1:
-			count += 1
+for i in range(0,rows):
+	for j in range(0,cols):
+		count = count + lights[i][j]
 print(count)
